@@ -527,7 +527,7 @@ Do **not** try to comment out Go Template code using HTML comments.
 {{ $author }}
 ```
 
-The templating engine will strip the content within the HTML comment, but will first evaluate any Go Template code if present within. So the above example will render `Emma Goldman`, as the `$author` variable got evaluated in the HTML comment. But the build would have failed if that code in the HTML comment had an error.
+The templating engine evaluates the Go Template code before stripping the content within the HTML comment. So the above example will render `Emma Goldman`, as the `$author` variable got evaluated in the HTML comment. But the build would have failed if that code in the HTML comment had an error.
 
 ## Hugo Parameters
 
